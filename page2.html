@@ -1,63 +1,14 @@
-
 <html>
-    <head></head>
     
-    <body>
-        <form action="sign_up.php" method="post">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
-              <div>
-                 <label for="first_name"><b>First Name</b></label>
-                <input type="text" placeholder="Enter first_name" name="first_name" required>
-            </div>
-             
-              <div>
-                  <label for="last_name"><b>Last Name</b></label>
-                <input type="text" placeholder="Enter last_name" name="last_name" required>
-            </div>
-             
-            <div>
-                  <label for="age"><b>Age</b></label>
-                <input type="text" placeholder="Enter age" name="age" required>
-            </div>
-            
-            <div>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-            </div>
+    
+    
+    
+<body>hi</body>
 
-            <div>
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-            </div>
-            
-            <div>
-                <button name="save">Sign Up</button>
-            </div>
 
-        </form>
-    </body>
+
+
+
+
+
 </html>
-
-
-
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="my_app";
-
-$conn= new mysqli($servername,$username,$password,$dbname);
-
-
-
-if(isset($_POST['save'])){
-    $sql="INSERT INTO users(first_name, last_name, age, email, password) VALUES('{$_POST['first_name']}','{$_POST['last_name']}', '{$_POST['age']}','{$_POST['email']}','{$_POST['password']}')";
-    if($conn->query($sql) === TRUE ){
-        echo "New Record Created";
-    }
-    else
-        echo "Error";
-}
-$conn->close();
-?>
